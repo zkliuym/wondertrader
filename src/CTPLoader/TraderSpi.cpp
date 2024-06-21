@@ -80,11 +80,13 @@ std::string extractProductID(const char* instrument)
 	return strRet;
 }
 
+#define _MyIsdigit(x) ('0' <= (x) && (x) <= '9')
 std::string extractProductName(const char* cname)
 {
 	std::string strRet;
 	auto idx = strlen(cname) - 1;
-	while (isdigit(cname[idx]) && idx > 0)
+	//while (isdigit(cname[idx]) && idx > 0)
+	while (_MyIsdigit(cname[idx]) && idx > 0)
 	{
 		idx--;
 	}

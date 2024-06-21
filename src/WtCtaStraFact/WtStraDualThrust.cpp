@@ -155,6 +155,7 @@ void WtStraDualThrust::on_schedule(ICtaStraCtx* ctx, uint32_t curDate, uint32_t 
 		if (curPx >= upper_bound && !_isstk)
 		{
 			//空仓出场
+
 			ctx->stra_exit_short(_moncode.c_str(), 2 * trdUnit, "DT_ExitShort");
 			ctx->stra_log_info(fmt::format("向上突破{}>={},空仓出场", curPx, upper_bound).c_str());
 

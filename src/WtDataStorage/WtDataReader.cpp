@@ -1741,6 +1741,7 @@ WTSKlineSlice* WtDataReader::readKlineSlice(const char* stdCode, WTSKlinePeriod 
 			rtCnt = 0;
 			hisCnt = count;
 			hisCnt = min(hisCnt, (uint32_t)barsList._bars.size());
+			int nTmp = barsList._bars.size();
 			head = &barsList._bars[barsList._bars.size() - hisCnt]; // 需要本地有存储数据，否则会崩溃
 			slice->appendBlock(head, hisCnt);
 		}

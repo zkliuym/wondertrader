@@ -407,6 +407,8 @@ WTSKlineSlice* WtDtMgr::get_kline_slice(const char* stdCode, WTSKlinePeriod peri
 	{
 		_subed_basic_bars.insert(key);
 
+		WTSKlineSlice* wks = _reader->readKlineSlice(stdCode, period, count, etime);
+
 		return _reader->readKlineSlice(stdCode, period, count, etime);
 	}
 
